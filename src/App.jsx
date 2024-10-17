@@ -1,12 +1,11 @@
 import appLogo from './assets/logo/logo.png'
 import './App.scss'
+import Header from './components/Header/Header'
 
 function App() {
   return (
     <>
-      <div>
-        <img className='logo-image' src={appLogo} alt='Logo image'/>
-      </div>
+      <Header/>
     </>
   )
 }

@@ -1,0 +1,103 @@
+@use './variables.scss' as *;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}
+
+@mixin page-header {
+    font-family: 'Titillium Web';
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  
+    @include tablet {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+    }
+}
+  
+@mixin subheader {
+    font-family: 'Titillium Web';
+    font-size: 1rem;
+    line-height: 1rem;
+  
+    @include tablet {
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+    }
+}
+  
+@mixin labels-links-buttons {
+    font-family: 'Titillium Web';
+    font-size: 1.3rem;
+    line-height: 2rem;
+  
+    @include tablet {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+    }
+}
+  
+@mixin table-header {
+    font-family: 'Titillium Web';
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $color-slate;
+  
+    @include tablet {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+    }
+}
+  
+@mixin body-large {
+    font-family: 'Titillium Web';
+    font-size: 1.5rem;
+    line-height: 2.6rem;
+  
+    @include tablet {
+      font-size: 1.6rem;
+      line-height: 2.8rem;
+    }
+}
+  
+@mixin body-medium {
+    font-family: 'Titillium Web';
+    font-size: 1.3rem;
+    line-height: 2rem;
+  
+    @include tablet {
+      font-size: 1.4rem;
+      line-height: 2.2rem;
+    }
+}
+  
+@mixin body-small {
+    font-family: 'Titillium Web';
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  
+    @include tablet {
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+    }
+}
+  
+@mixin chevron-transition {
+    transition: transform 330ms ease-in-out;
+  }
+  
+  @mixin chevron-parent {
+    &:hover :nth-last-child(1) {
+      transform: translateX(0.4rem);
+    }
+}

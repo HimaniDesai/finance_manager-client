@@ -1,0 +1,53 @@
+@use './mixins.scss' as *;
+@use './typography.scss' as *;
+@use './variables.scss' as *;
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body, header, footer, 
+div, section, form,
+h1, h2, h3, h4, p, 
+time, img, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
+    background-color: $color-lightgrey;
+    color: $color-is-black;
+}
+
+button, input, textarea {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    @include page-header;
+}
+
+h2 {
+    @include subheader;
+}
+
+h4 {
+    @include table-header;
+}
+
+label, a, button {
+    @include labels-links-buttons;
+}
