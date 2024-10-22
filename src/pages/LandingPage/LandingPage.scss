@@ -18,10 +18,6 @@
     &__logo{
         display: flex;
         width: 100%;
-        // border: 1px solid $white;
-        @include tablet {
-            
-        }
         &__items {
             display: flex;
             text-decoration: none;
@@ -72,7 +68,12 @@
     &__container{
         &-left{
             width: 100%;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid $light-green;
             @include tablet{
+                padding-left: 1rem;
+                border: none;
+                padding-bottom: 0;
                 border-right: 2px solid $light-green;
             }
         }
@@ -83,9 +84,13 @@
             }
         }
         &__title {
-            padding: 1rem 1rem;
+            padding: 1rem;
             color: $teal;
+            text-align: left;
             @include page-header;
+            @include tablet {
+                padding: 1rem 0 1rem 0;
+            }
         }
         &__login{
             
@@ -170,16 +175,15 @@
 }
 
 .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: fit-content;
+    height: 5rem;
+    line-height: 5rem;
     background-color: $teal;
     color: $cloud;
     @include page-header;
-    @include tablet {
-        height: 5rem;
-        line-height: 5rem;
-        text-align: center;
-    }
 }
 
 .button {
