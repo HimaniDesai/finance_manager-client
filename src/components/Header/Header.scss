@@ -22,29 +22,34 @@
         @include tablet {
             width: 40%;
         }
-        &-text {
-            text-align: center;
-            justify-content: center;
-            padding: 1.5rem 0 1.5rem 0;
-
-            @include page-header;
-            @include tablet {
-                // width: 40%;
-                padding: 1.5rem 0;
+        &__items {
+            display: flex;
+            text-decoration: none;
+            color: $cloud;
+            &-text {
                 text-align: center;
+                justify-content: center;
+                padding: 1.5rem 0 1.5rem 0;
+
+                @include page-header;
+                @include tablet {
+                    // width: 40%;
+                    padding: 1.5rem 0;
+                    text-align: center;
+                }
             }
-        }
-        &-image{
-            width: 3rem;
-            height: 3rem;
-            padding: 1rem;
-        }
-        &-logout{
-            padding: 2rem 0;
-            margin-left: 2rem;
-            @include subheader;
-            @include tablet{
-                display: none;
+            &-image{
+                width: 3rem;
+                height: 3rem;
+                padding: 1rem;
+            }
+            &-logout{
+                padding: 2rem 0;
+                margin-left: 2rem;
+                @include subheader;
+                @include tablet{
+                    display: none;
+                }
             }
         }
     }
@@ -57,16 +62,24 @@
             justify-content: flex-end;
             align-items: center;
         }
+        &__links {
+            text-decoration: none;
+            color: $cloud;
+        }
         &-item{
+            text-decoration: none;
+            color: $cloud;
             text-align: center;
             width: 100%;
+            height: inherit;
             padding: 1rem 0;
+            text-wrap: wrap;
             &:hover {
                 text-decoration: none;
-            }
-            &:active {
                 background-color: $light-green;
-                border-bottom: 2px solid $red;
+            }
+            &--active {
+                background-color: $light-green;
                 height: inherit;
             }
         }
@@ -77,6 +90,7 @@
             display: flex;
             padding: 1.5rem 0;
             margin-left: 1rem;
+            margin-right: 1rem;
             @include subheader;
             &:hover{
                 background-color: $red;
