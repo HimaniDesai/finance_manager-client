@@ -73,7 +73,7 @@ export default function LandingPage() {
                 </div>
             </form>
         </div>
-        <div className="footer">
+        <div className="footer-title">
             We keep your data SAFE !!!
         </div>
         </>
