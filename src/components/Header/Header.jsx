@@ -12,11 +12,11 @@ export default function Header() {
     return (
         <div className="header">
             <div className="header__logo">
-                <Link className="header__logo__items" to={'/'}>
+                <Link className="header__logo__items" to={'/budgetPlanning/dashboard'}>
                     <img className="header__logo__items-image" src={logo} alt="finance-manager-logo"/>
                     <div className="header__logo__items-text">Finance Manager</div>
-                    <div className="header__logo__items-logout">LOGOUT</div>
                 </Link>
+                <Link to={'/'} className="header__logo__items-logout">LOGOUT</Link>
             </div>
             <div className="header__nav">
                 <Link to={'/budgetPlanning/*'}
@@ -34,9 +34,9 @@ export default function Header() {
                                         ? 'header__nav-item header__nav-item--active' : 'header__nav-item'}>
                         Portfolio Analysis
                 </Link>
-                <div className="header__logout">
+                <Link to={'/'} className="header__logout">
                     LOGOUT
-                </div>
+                </Link>
             </div>
             
         </div>

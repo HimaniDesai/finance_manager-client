@@ -44,6 +44,8 @@
                 padding: 1rem;
             }
             &-logout{
+                text-decoration: none;
+                color: $cloud;
                 padding: 2rem 0;
                 margin-left: 2rem;
                 @include subheader;
@@ -87,6 +89,8 @@
     &__logout{
         display: none;
         @include tablet {
+            text-decoration: none;
+            color: $cloud;
             display: flex;
             padding: 1.5rem 0;
             margin-left: 1rem;
