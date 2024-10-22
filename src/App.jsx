@@ -11,6 +11,7 @@ import ExpenseTrackingManagePage from './pages/ExpenseTrackingManagePage/Expense
 import PortfolioAnalysisDashboardPage from './pages/PortfolioAnalysisDashboardPage/PortfolioAnalysisDashboardPage'
 import PortfolioAnalysisManagePage from './pages/PortfolioAnalysisManagePage/PortfolioAnalysisManagePage'
 import LandingPage from './pages/LandingPage/LandingPage'
+import Footer from './components/Footer/Footer'
 function App() {
   return (
     <>
@@ -18,33 +19,33 @@ function App() {
         <Routes>
           <Route path='/login' element={<LandingPage/>}></Route>
           <Route path='/' element={<Redirect/>}></Route>
-          <Route path='/budgetPlanning/*' element={[<Header/>,<Subheader feature={'budgetPlanning'} options={['Dashboard', 'Plan Budget']}/>]}></Route>
-          <Route path='/expenseTracking/*' element={[<Header/>,<Subheader feature={'expenseTracking'} options={['Dashboard', 'Manage Expense']}/>]}></Route>
-          <Route path='/portfolioAnalysis/*' element={[<Header/>,<Subheader feature={'portfolioAnalysis'} options={['Dashboard', 'Manage Investments']}/>]}></Route>
+          <Route path='/budgetPlanning/*' element={[<Header/>,<Subheader feature={'budgetPlanning'} options={['Dashboard', 'Plan Budget']}/>, <Footer/>]}></Route>
+          <Route path='/expenseTracking/*' element={[<Header/>,<Subheader feature={'expenseTracking'} options={['Dashboard', 'Manage Expense']}/>, <Footer/>]}></Route>
+          <Route path='/portfolioAnalysis/*' element={[<Header/>,<Subheader feature={'portfolioAnalysis'} options={['Dashboard', 'Manage Investments']}/>, <Footer/>]}></Route>
           <Route path='/budgetPlanning/dashboard' element={[
             <Header/>,
             <Subheader feature={'budgetPlanning'} options={['Dashboard', 'Plan Budget']}/>,
-            <BudgetPlanningDashboardPage/>]}></Route>
+            <BudgetPlanningDashboardPage/>, <Footer/>]}></Route>
           <Route path='/expenseTracking/dashboard' element={[
             <Header/>,
             <Subheader feature={'expenseTracking'} options={['Dashboard', 'Manage Expense']}/>,
-            <ExpenseTrackingDashboardPage/>]}></Route>
+            <ExpenseTrackingDashboardPage/>, <Footer/>]}></Route>
           <Route path='/portfolioAnalysis/dashboard' element={[
             <Header/>,
             <Subheader feature={'portfolioAnalysis'} options={['Dashboard', 'Manage Investments']}/>,
-            <PortfolioAnalysisDashboardPage/>]}></Route>
+            <PortfolioAnalysisDashboardPage/>, <Footer/>]}></Route>
           <Route path='/budgetPlanning/planBudget' element={[
             <Header/>,
             <Subheader feature={'budgetPlanning'} options={['Dashboard', 'Plan Budget']}/>,
-            <BudgetPlanningManagePage/>]}></Route>
+            <BudgetPlanningManagePage/>, <Footer/>]}></Route>
           <Route path='/expenseTracking/manageExpense' element={[
             <Header/>,
             <Subheader feature={'expenseTracking'} options={['Dashboard', 'Manage Expense']}/>,
-            <ExpenseTrackingManagePage/>]}></Route>
+            <ExpenseTrackingManagePage/>, <Footer/>]}></Route>
           <Route path='/portfolioAnalysis/manageInvestment' element={[
             <Header/>,
             <Subheader feature={'portfolioAnalysis'} options={['Dashboard', 'Manage Investments']}/>,
-            <PortfolioAnalysisManagePage/>]}></Route>
+            <PortfolioAnalysisManagePage/>, <Footer/>]}></Route>
         </Routes>
       </BrowserRouter>
     </>
