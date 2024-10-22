@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import './LandingPage.scss'
 import logo from '../../assets/logo/logo.png'
 import DatePicker from 'react-date-picker'
+import 'react-date-picker/dist/DatePicker.css';
+// import 'react-calendar/dist/Calendar.css';
+// import DatePicker from "react-datepicker";
+// import 'react-datepicker/dist/react-datepicker.css'
 import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
@@ -54,7 +58,10 @@ export default function LandingPage() {
                 <div className="form__container__register-dob">
                     <label className="form__container__register-dob-label">Date of Birth:</label>
                     <div className="form__container__register-dob-input">
-                        <DatePicker value={dob} onChange={date => setdob(date)}/>
+                        <DatePicker 
+                            selected={dob} value={dob} 
+                            maxDate={new Date()}
+                            onChange={date => setdob(date)}/>
                     </div>
                 </div>
                 <div className="form__container__register-pwd">
