@@ -1,0 +1,24 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.expense{
+    background-color: $light-pink;
+    &__date{
+        font-weight: 600;
+        @include body-large;
+    }
+    &__item{
+        display: flex;
+        align-content: flex-start;
+        &-title{
+            color: $light-black;
+            padding: 0 1rem;
+            @include table-header;
+        }
+        &-value{
+            color: $light-black;
+            @include body-medium;
+        }
+    }
+}

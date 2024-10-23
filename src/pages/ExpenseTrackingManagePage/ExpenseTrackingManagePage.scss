@@ -1,0 +1,54 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.timebar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 5rem;
+    background-color: $lightgrey;
+    @include subheader;
+    @include tablet{
+        height: 4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    &__title{
+        display: flex;
+        justify-content: center;
+        color: $light-black;
+        padding: 1rem;
+    }
+    &__month{
+        padding: 0 1rem 1rem 1rem;
+        @include tablet{
+            padding: 1rem;
+        }
+    }
+}
+.expense__details{
+    display: flex;
+    flex-direction: column;
+    @include tablet{
+        display: flex;
+        flex-direction: row;
+    }
+}
+.expenses {
+    width: 100%;
+    @include tablet {
+        width: 50%;
+    }
+    &__title{
+        padding: 1rem 0;
+        background-color: $teal;
+        color: $cloud;
+        font-weight: 600;
+        @include subheader;
+    }
+    &__item{
+        border-bottom: 2px solid $light-green;
+    }
+}

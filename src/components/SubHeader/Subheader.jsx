@@ -29,14 +29,14 @@ export default function Subheader({feature, options}) {
                 <Link to={path1} 
                     className={url === '/budgetPlanning/dashboard' || url === '/expenseTracking/dashboard' || url === '/portfolioAnalysis/dashboard'
                         ? 'subheader__container__items subheader__container__items--active' : 'subheader__container__items'
-                    }>
+                    } key={1}>
                 {/* <div >className={url === '/dashboard' ? 'header__button header__button--active' : 'header__button'}> */}
                     {options[0]}
                 </Link>
                 <Link to={path2} 
                     className={url === '/budgetPlanning/planBudget' || url === '/expenseTracking/manageExpense' || url === '/portfolioAnalysis/manageInvestment'
                         ? 'subheader__container__items subheader__container__items--active' : 'subheader__container__items'
-                    }>
+                    } key={2}>
                     {options[1]}
                 </Link>
             </div>
