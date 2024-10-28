@@ -3,7 +3,7 @@ import './DisplayExpense.scss'
 import {dateFormat} from '../../Utilities'
 import { Link, useNavigate } from "react-router-dom";
 
-export default function DisplayExpense({expense}) {
+export default function DisplayExpense({expense, handleDeleteExpense}) {
     const navigate = useNavigate();
     return (
         <>
@@ -42,7 +42,7 @@ export default function DisplayExpense({expense}) {
                 </div>
                 <div className="expense__item-last">
                     <button className="button" onClick={()=> navigate(`/expenseTracking/manageExpense/editExpense/${expense.id}`)}>EDIT</button>
-                    <button className="button" onClick={()=> navigate(`/expenseTracking/manageExpense/editExpense/${expense.id}`)}>DELETE</button>
+                    <button className="button" onClick={() => handleDeleteExpense(expense.id)}>DELETE</button>
                     {/* <Link to={`/expenseTracking/manageExpense/editExpense/${expense.id}`}>
                         EDIT
                     </Link> */}

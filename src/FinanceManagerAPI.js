@@ -11,6 +11,8 @@ const FinanceManagerAPI = {
     getIncomeById: (id) => api+ `/incomes/`+ `${id}`,
     addExpenseByUserId: api+ `/expenses/`,
     addIncomeByUserId: api+ `/incomes/`,
+    deleteExpenseById: (id) =>  api+ `/expenses/`+ `${id}`,
+    deleteIncomeById: (id) =>  api+ `/incomes/`+ `${id}`,
 }
 
 export default FinanceManagerAPI;

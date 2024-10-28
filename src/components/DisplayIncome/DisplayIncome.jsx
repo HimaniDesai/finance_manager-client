@@ -3,7 +3,7 @@ import './DisplayIncome.scss'
 import {dateFormat} from '../../Utilities'
 import { useNavigate } from "react-router-dom";
 
-export default function DisplayIncome({income}) {
+export default function DisplayIncome({income, handleDeleteIncome}) {
     const navigate = useNavigate()
     return (
         <>
@@ -38,7 +38,7 @@ export default function DisplayIncome({income}) {
                 </div>
                 <div className="expense__item-last">
                     <button className="button" onClick={()=> navigate(`/expenseTracking/manageExpense/editIncome/${income.id}`)}>EDIT</button>
-                    <button className="button" onClick={()=> navigate(`/expenseTracking/manageExpense/editIncome/${income.id}`)}>DELETE</button>
+                    <button className="button" onClick={()=> handleDeleteIncome(income.id)}>DELETE</button>
                 </div>
             </div>
         </div>

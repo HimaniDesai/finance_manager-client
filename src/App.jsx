@@ -1,4 +1,3 @@
-import appLogo from './assets/logo/logo.png'
 import './App.scss'
 import Header from './components/Header/Header'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
