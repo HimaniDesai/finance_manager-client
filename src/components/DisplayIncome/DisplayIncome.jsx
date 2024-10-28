@@ -34,7 +34,10 @@ export default function DisplayIncome({income}) {
                             income.gifts + income.returns + income.prize_money + income.salary + income.refunds
                         }</label>
                 </div>
-
+                <div className="expense__item-last">
+                    <button className="button" onClick={()=> navigate(`/expenseTracking/manageExpense/editExpense/${expense.id}`)}>EDIT</button>
+                    <button className="button" onClick={()=> navigate(`/expenseTracking/manageExpense/editExpense/${expense.id}`)}>DELETE</button>
+                </div>
             </div>
         </div>
         </>

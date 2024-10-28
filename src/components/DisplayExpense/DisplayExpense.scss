@@ -20,5 +20,10 @@
             color: $light-black;
             @include body-medium;
         }
+        &-last{
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 1rem;
+        }
     }
 }

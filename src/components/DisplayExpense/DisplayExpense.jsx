@@ -1,8 +1,10 @@
 import React from "react";
 import './DisplayExpense.scss'
 import {dateFormat} from '../../Utilities'
+import { Link, useNavigate } from "react-router-dom";
 
 export default function DisplayExpense({expense}) {
+    const navigate = useNavigate();
     return (
         <>
         <div className="expense">
@@ -38,7 +40,14 @@ export default function DisplayExpense({expense}) {
                             expense.tax + expense.other_purchases + expense.investments + expense.insurances + expense.bills_and_utilities + expense.grocery_and_food
                         }</label>
                 </div>
-
+                <div className="expense__item-last">
+                    <button className="button" onClick={()=> navigate(`/expenseTracking/manageExpense/editExpense/${expense.id}`)}>EDIT</button>
+                    <button className="button" onClick={()=> navigate(`/expenseTracking/manageExpense/editExpense/${expense.id}`)}>DELETE</button>
+                    {/* <Link to={`/expenseTracking/manageExpense/editExpense/${expense.id}`}>
+                        EDIT
+                    </Link> */}
+                    {/* <EditExpenseItem expense={expense}>EDIT</EditExpenseItem> */}
+                </div>
             </div>
         </div>
         </>

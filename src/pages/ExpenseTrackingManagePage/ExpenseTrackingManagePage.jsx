@@ -39,19 +39,21 @@ export default function ExpenseTrackingManagePage() {
                     />
                 </div>
             </div>
+            <div className="new-expense">
+                <div className="new-expense__item">Add new Expense</div>
+                <div className="new-expense__item">Add new Income</div>
+            </div>
             <div className="expense__details">
                 <div className="expenses">
                     <div className="expenses__title">Expenses</div>
                     <div className="expenses__item">
                         {expenses.map((expense) => (<DisplayExpense key={expense.id} expense={expense}/>))}
-                        {/* <DisplayExpense expense={expense} /> */}
                     </div>
                 </div>
                 <div className="expenses">
                     <div className="expenses__title">Incomes</div>
                     <div className="expenses__item">
                         {incomes.map((income) => (<DisplayIncome key={income.id} income={income}/>))}
-                        {/* <DisplayExpense expense={expense} /> */}
                     </div>
                 </div>
             </div>

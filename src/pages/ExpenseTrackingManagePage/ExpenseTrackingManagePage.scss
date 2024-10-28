@@ -36,6 +36,20 @@
         flex-direction: row;
     }
 }
+.new-expense{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 2rem;
+    &__item{
+        width: auto;
+        background-color: $light-green;
+        color: $cloud;
+        padding: 0.3rem 1rem;
+        border-radius: 1rem;
+        @include subheader;
+    }
+}
 .expenses {
     width: 100%;
     @include tablet {

@@ -12,6 +12,7 @@ import PortfolioAnalysisDashboardPage from './pages/PortfolioAnalysisDashboardPa
 import PortfolioAnalysisManagePage from './pages/PortfolioAnalysisManagePage/PortfolioAnalysisManagePage'
 import LandingPage from './pages/LandingPage/LandingPage'
 import Footer from './components/Footer/Footer'
+import EditExpenseItem from './pages/EditExpenseItem/EditExpenseItem'
 function App() {
   return (
     <>
@@ -38,10 +39,15 @@ function App() {
             <Header/>,
             <Subheader feature={'budgetPlanning'} options={['Dashboard', 'Plan Budget']}/>,
             <BudgetPlanningManagePage/>, <Footer/>]}></Route>
-          <Route path='/expenseTracking/manageExpense' element={[
+          <Route path='/expenseTracking/manageExpense/' element={[
             <Header/>,
             <Subheader feature={'expenseTracking'} options={['Dashboard', 'Manage Expense']}/>,
             <ExpenseTrackingManagePage/>, <Footer/>]}></Route>
+          <Route path='/expenseTracking/manageExpense/editExpense/:idEdit' element={[
+            <Header/>,
+            <Subheader feature={'expenseTracking'} options={['Dashboard', 'Manage Expense']}/>,
+            <EditExpenseItem/>, <Footer/>
+            ]}></Route>
           <Route path='/portfolioAnalysis/manageInvestment' element={[
             <Header/>,
             <Subheader feature={'portfolioAnalysis'} options={['Dashboard', 'Manage Investments']}/>,
