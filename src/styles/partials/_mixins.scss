@@ -36,12 +36,12 @@
   
 @mixin labels-links-buttons {
     font-family: 'Titillium Web';
-    font-size: 1.3rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1rem;
   
     @include tablet {
-      font-size: 1.4rem;
-      line-height: 2.2rem;
+      font-size: 1.2rem;
+      line-height: 1.2rem;
     }
 }
   
@@ -51,11 +51,10 @@
     line-height: 1.6rem;
     font-weight: 600;
     text-transform: uppercase;
-    color: $color-slate;
   
     @include tablet {
       font-size: 1.2rem;
-      line-height: 1.8rem;
+      line-height: 1.2rem;
     }
 }
   

@@ -5,6 +5,14 @@ import './main.scss'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    {/* <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<LandingPage/>}></Route>
+        <Route path='/login' element={<LandingPage/>}></Route>
+        <Route path='/app' element={<App/>}></Route>
+        // <Route path='/app/*' element={<App/>}></Route>
+      // </Routes>
+    // </BrowserRouter> */}
+      <App/>
   </StrictMode>,
 )

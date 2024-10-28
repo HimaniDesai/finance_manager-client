@@ -1,0 +1,76 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.time {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 8rem;
+    background-color: $lightgrey;
+    @include subheader;
+    @include tablet{
+        height: 4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    &__title{
+        display: flex;
+        justify-content: center;
+        color: $light-black;
+        padding: 1rem;
+    }
+    &__month{
+        padding: 0 1rem 1rem 1rem;
+        @include tablet{
+            padding: 1rem;
+        }
+    }
+    &__button {
+        display: flex;
+        justify-content: space-around;
+        @include tablet {
+            align-items: center;
+            justify-items: center;
+        }
+        
+    }
+}
+
+.expense {
+    display: table;
+    table-layout: fixed;
+    overflow-x: auto;
+    overflow: auto;
+    @include subheader;
+    @include tablet{
+        width: 100%;
+    }
+    &__header{
+        display: table-row;
+        overflow-x: auto;
+        &-title{
+            display: table-row;
+            background-color: $indigo;
+        }
+    }
+    &__cell{
+        display: table-cell;
+    }
+    &__input{
+        width: 80%;
+    }
+}
+.suggestion{
+    padding: 1rem;
+    &__label{
+        @include table-header;
+    }
+}
+.reset__button{
+    background-color: $light-green;
+    color: $off-white;
+    padding: 0.5rem 1rem;
+    @include labels-links-buttons;
+}
