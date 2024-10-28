@@ -5,7 +5,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import FinanceManagerAPI from "../../FinanceManagerAPI";
 import axios from "axios";
-import {dateFormat} from '../../Utilities'
+// import {dateFormat} from '../../Utilities'
 
 const {editIncome, getIncomeById} = FinanceManagerAPI;
 
@@ -28,7 +28,7 @@ export default function EditIncomeItem() {
                 setReturns(incomeData.returns)
                 setPrizeMoney(incomeData.prize_money)
                 setGifts(incomeData.gifts)
-                setIncomeDate(dateFormat(incomeData.income_date))
+                setIncomeDate(incomeData.income_date)
                 
             }catch (error) {
                 console.error("Unable to update income:", error);
@@ -49,6 +49,7 @@ export default function EditIncomeItem() {
                 gifts: gifts,
                 income_date: incomeDate,
             };
+            console.log(incomeDate)
       
             await axios.put(editIncome(idEdit), requestBody);
             navigate(-1);
@@ -62,7 +63,7 @@ export default function EditIncomeItem() {
     const handlePrizeMoney = (event) => setPrizeMoney(event.target.value )
     const handleReturns = (event) => setReturns(event.target.value )
     const handleGifts = (event) => setGifts(event.target.value )
-    const handleIncomeDate = (event) => setIncomeDate(event.target.value )
+    // const handleIncomeDate = (event) => setIncomeDate(event.target.value )
     return (
         <>
         <div className="edit_expense-header">
@@ -84,7 +85,7 @@ export default function EditIncomeItem() {
                     value={incomeDate}
                     className="edit_expense-field--date"
                     selected={incomeDate}
-                    onChange={handleIncomeDate}
+                    onChange={(date) => setIncomeDate(date)}
                  />
             </div>
             <div className="edit_expense">

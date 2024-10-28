@@ -30,7 +30,7 @@ export default function EditExpenseItem() {
                 setTax(expenseData.tax)
                 setInvestments(expenseData.investments)
                 setOtherPurchases(expenseData.other_purchases)
-                setExpenseDate(dateFormat(expenseData.expense_date))
+                setExpenseDate((expenseData.expense_date))
                 
             }catch (error) {
                 console.error("Unable to update expense:", error);
@@ -66,7 +66,7 @@ export default function EditExpenseItem() {
     const handleTax = (event) => setTax(event.target.value )
     const handleInvestments = (event) => setInvestments(event.target.value )
     const handleOtherPurchases = (event) => setOtherPurchases(event.target.value )
-    const handleExpenseDate = (event) => setExpenseDate(event.target.value )
+    // const handleExpenseDate = (event) => setExpenseDate(event.target.value )
     return (
         <>
         <div className="edit_expense-header">
@@ -88,7 +88,7 @@ export default function EditExpenseItem() {
                     value={expenseDate}
                     className="edit_expense-field--date"
                     selected={expenseDate}
-                    onChange={handleExpenseDate}
+                    onChange={(date) => setExpenseDate(date)}
                  />
             </div>
             <div className="edit_expense">
