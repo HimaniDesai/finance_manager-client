@@ -5,9 +5,11 @@ import DatePicker from "react-datepicker";
 import FinanceManagerAPI from "../../FinanceManagerAPI";
 import DisplayExpense from "../../components/DisplayExpense/DisplayExpense";
 import DisplayIncome from "../../components/DisplayIncome/DisplayIncome";
+import { useNavigate } from "react-router-dom";
 
 const {getExpenseForGivenMonth, getIncomeForGivenMonth} = FinanceManagerAPI
 export default function ExpenseTrackingManagePage() {
+    const navigate = useNavigate()
     const [monthYear, setMonthYear] = useState(new Date())
     const [expenses, setExpenses] = useState([])
     const [incomes, setIncomes] = useState([])
@@ -25,6 +27,12 @@ export default function ExpenseTrackingManagePage() {
         })
         .catch((error) => {console.error()});
     }, [monthYear])
+    const handleNewExpense=()=>{
+        navigate(`/expenseTracking/manageExpense/insertExpense/1`)
+    }
+    const handleNewIncome=()=>{
+        navigate(`/expenseTracking/manageExpense/insertIncome/1`)
+    }
     return (
         <>
             <div className="timebar">
@@ -40,8 +48,16 @@ export default function ExpenseTrackingManagePage() {
                 </div>
             </div>
             <div className="new-expense">
-                <div className="new-expense__item">Add new Expense</div>
-                <div className="new-expense__item">Add new Income</div>
+                <div className="new-expense__item">
+                    <button className="new-expense__item--button" onClick={handleNewExpense}>
+                        Add new Expense
+                    </button>
+                </div>
+                <div className="new-expense__item">
+                    <button className="new-expense__item--button" onClick={handleNewIncome}>
+                        Add new Income
+                    </button>
+                </div>
             </div>
             <div className="expense__details">
                 <div className="expenses">

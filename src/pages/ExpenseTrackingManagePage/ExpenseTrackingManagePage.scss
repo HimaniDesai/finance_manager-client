@@ -43,11 +43,16 @@
     height: 2rem;
     &__item{
         width: auto;
-        background-color: $light-green;
-        color: $cloud;
-        padding: 0.3rem 1rem;
-        border-radius: 1rem;
         @include subheader;
+        &--button{
+            background-color: $light-green;
+            padding: 0.3rem 1rem;
+            // background: transparent;
+            color: $cloud;
+            border-radius: 1rem;
+            @include subheader;
+            
+        }
     }
 }
 .expenses {

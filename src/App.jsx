@@ -14,6 +14,8 @@ import LandingPage from './pages/LandingPage/LandingPage'
 import Footer from './components/Footer/Footer'
 import EditExpenseItem from './pages/EditExpenseItem/EditExpenseItem'
 import EditIncomeItem from './pages/EditIncomeItem/EditIncomeItem'
+import AddExpenseItem from './pages/AddExpenseItem/AddExpenseItem'
+import AddIncomeItem from './pages/AddIncomeItem/AddIncomeItem'
 function App() {
   return (
     <>
@@ -57,6 +59,16 @@ function App() {
             <Header/>,
             <Subheader feature={'expenseTracking'} options={['Dashboard', 'Manage Expense']}/>,
             <EditIncomeItem/>, <Footer/>
+            ]}></Route>
+          <Route path='/expenseTracking/manageExpense/insertExpense/:id' element={[
+            <Header/>,
+            <Subheader feature={'expenseTracking'} options={['Dashboard', 'Manage Expense']}/>,
+            <AddExpenseItem/>, <Footer/>
+            ]}></Route>
+          <Route path='/expenseTracking/manageExpense/insertIncome/:id' element={[
+            <Header/>,
+            <Subheader feature={'expenseTracking'} options={['Dashboard', 'Manage Expense']}/>,
+            <AddIncomeItem/>, <Footer/>
             ]}></Route>
         </Routes>
       </BrowserRouter>

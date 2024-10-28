@@ -1,0 +1,54 @@
+@use '../../styles/partials/mixins.scss' as *;
+@use '../../styles/partials/typography.scss' as *;
+@use '../../styles/partials/variables.scss' as *;
+
+.edit_expense{
+    display:  flex;
+    justify-content: flex-start;
+    &-header{
+        display:  flex;
+        justify-content: flex-start;
+        padding-top: 1rem;
+    }
+    &-image{
+        padding: 0 1rem;
+    }
+    &-title{
+        @include subheader;
+    }
+    &-label{
+        padding: 1rem;
+        @include labels-links-buttons;
+    }
+    &-field{
+        width: 80%;
+        height: 1rem;
+    }
+    &--date{
+        width: 80%;
+    }
+    &-input{
+        display: flex;
+        justify-content: flex-start;
+        padding: 1rem;
+        @include tablet{
+            width: auto;
+        }
+    }
+    &-last{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        @include tablet{
+            width: 50%;
+        }
+    }
+    &-button{
+        width: auto;
+        padding: 0.5rem 1rem;
+
+    }
+}
+.edit_form{
+    padding: 1rem;
+}

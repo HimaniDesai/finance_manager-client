@@ -9,6 +9,8 @@ const FinanceManagerAPI = {
     getExpenseById: (id) => api+ `/expenses/`+ `${id}`,
     editIncome: (id) =>  api+ `/incomes/`+ `${id}`,
     getIncomeById: (id) => api+ `/incomes/`+ `${id}`,
+    addExpenseByUserId: api+ `/expenses/`,
+    addIncomeByUserId: api+ `/incomes/`,
 }
 
 export default FinanceManagerAPI;
