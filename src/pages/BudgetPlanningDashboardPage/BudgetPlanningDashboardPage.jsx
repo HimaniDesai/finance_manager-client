@@ -23,7 +23,6 @@ export default function BudgetPlanningDashboardPage() {
         axios.get(getExpenseForGivenYear(1, year.getFullYear()))
         .then((response) => {
             setExpenses(response.data)
-            console.log("Expenses"+expenses)
         })
         .catch((error) => {console.error()});
     }, [year])
@@ -48,7 +47,7 @@ export default function BudgetPlanningDashboardPage() {
             }
         })
         setExpenseData(totalExpense)
-    }, [year])
+    }, [year,expenses])
     useEffect(()=>{
         let totalIncome = new Map()
         incomes.map((i) => {
@@ -62,7 +61,7 @@ export default function BudgetPlanningDashboardPage() {
             }
         })
         setIncomeData(totalIncome)
-    }, [year])
+    }, [year, incomes])
     useEffect(() => {
         let graphData = []
         graphData.push(['Month','Expense','Income', 'Savings'])
@@ -78,9 +77,8 @@ export default function BudgetPlanningDashboardPage() {
             }
             graphData.push([month, expense, income, income-expense])
         }
-        console.log(graphData)
         setData(graphData)
-    },[year])
+    },[year, incomeData, expenseData])
 
     return (
         <>

@@ -9,10 +9,12 @@ export default function Footer() {
         <>  
         <div className="footer">
             <div className="footer__promise">We keep your data SAFE !!!</div>
-            <div className="footer__icons">
-                <a href="https://www.github.com/HimaniDesai"><img className="footer__icons-image" src={github} alt="github-icon"/></a>
-                <a href="https://www.instagram.com/himanidesai1999"><img className="footer__icons-image" src={instagram} alt="instagram-icon" /></a>
-                <a href="https://www.linkedin.com/in/desaihimani"><img className="footer__icons-image" src={linkedIn} alt="linkedIn-icon" /></a>
+            <div className="footer__container">
+                <div className="footer__icons">
+                    <a href="https://www.github.com/HimaniDesai"><img className="footer__icons-image" src={github} alt="github-icon"/></a>
+                    <a href="https://www.instagram.com/himanidesai1999"><img className="footer__icons-image" src={instagram} alt="instagram-icon" /></a>
+                    <a href="https://www.linkedin.com/in/desaihimani"><img className="footer__icons-image" src={linkedIn} alt="linkedIn-icon" /></a>
+                </div>
             </div>
         </div>
         </>
