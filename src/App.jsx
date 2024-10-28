@@ -13,6 +13,7 @@ import PortfolioAnalysisManagePage from './pages/PortfolioAnalysisManagePage/Por
 import LandingPage from './pages/LandingPage/LandingPage'
 import Footer from './components/Footer/Footer'
 import EditExpenseItem from './pages/EditExpenseItem/EditExpenseItem'
+import EditIncomeItem from './pages/EditIncomeItem/EditIncomeItem'
 function App() {
   return (
     <>
@@ -43,15 +44,20 @@ function App() {
             <Header/>,
             <Subheader feature={'expenseTracking'} options={['Dashboard', 'Manage Expense']}/>,
             <ExpenseTrackingManagePage/>, <Footer/>]}></Route>
+          <Route path='/portfolioAnalysis/manageInvestment' element={[
+            <Header/>,
+            <Subheader feature={'portfolioAnalysis'} options={['Dashboard', 'Manage Investments']}/>,
+            <PortfolioAnalysisManagePage/>, <Footer/>]}></Route>
           <Route path='/expenseTracking/manageExpense/editExpense/:idEdit' element={[
             <Header/>,
             <Subheader feature={'expenseTracking'} options={['Dashboard', 'Manage Expense']}/>,
             <EditExpenseItem/>, <Footer/>
             ]}></Route>
-          <Route path='/portfolioAnalysis/manageInvestment' element={[
+          <Route path='/expenseTracking/manageExpense/editIncome/:idEdit' element={[
             <Header/>,
-            <Subheader feature={'portfolioAnalysis'} options={['Dashboard', 'Manage Investments']}/>,
-            <PortfolioAnalysisManagePage/>, <Footer/>]}></Route>
+            <Subheader feature={'expenseTracking'} options={['Dashboard', 'Manage Expense']}/>,
+            <EditIncomeItem/>, <Footer/>
+            ]}></Route>
         </Routes>
       </BrowserRouter>
     </>

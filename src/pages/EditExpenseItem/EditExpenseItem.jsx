@@ -12,18 +12,18 @@ const {editExpense, getExpenseById} = FinanceManagerAPI;
 export default function EditExpenseItem() {
     const navigate = useNavigate();
     const { idEdit } = useParams();
-    const [bills_and_utilities, setBillsAndUtilities] = useState(0)
-    const [grocery_and_food, setGroceryAndFood] = useState(0)
+    const [billsAndUtilities, setBillsAndUtilities] = useState(0)
+    const [groceryAndFood, setGroceryAndFood] = useState(0)
     const [insurances, setInsurances] = useState(0)
     const [tax, setTax] = useState(0)
     const [investments, setInvestments] = useState(0)
-    const [other_purchases, setOtherPurchases] = useState(0)
-    const [expense_date, setExpenseDate] = useState(new Date())
+    const [otherPurchases, setOtherPurchases] = useState(0)
+    const [expenseDate, setExpenseDate] = useState(new Date())
     useEffect(()=>{
         const fetchExpenseData = async() => {
             try{
                 const response = await axios.get(getExpenseById(idEdit))
-                const expenseData = response.data
+                const expenseData = response.data[0] 
                 setBillsAndUtilities(expenseData.bills_and_utilities)
                 setGroceryAndFood(expenseData.grocery_and_food)
                 setInsurances(expenseData.insurances)
@@ -31,25 +31,26 @@ export default function EditExpenseItem() {
                 setInvestments(expenseData.investments)
                 setOtherPurchases(expenseData.other_purchases)
                 setExpenseDate(dateFormat(expenseData.expense_date))
+                
             }catch (error) {
                 console.error("Unable to update expense:", error);
                 setError(true);
             }
         }
-        fetchExpenseData()    
-    },[idEdit])
+        fetchExpenseData() 
+         
+    },[])
     const handleSubmit = async (event) => {
         event.preventDefault()
         try {
             const requestBody = {
-                bills_and_utilities: bills_and_utilities,
-                grocery_and_food: grocery_and_food,
+                bills_and_utilities: billsAndUtilities,
+                grocery_and_food: groceryAndFood,
                 insurances: insurances,
                 tax: tax,
                 investments: investments,
-                other_purchases: other_purchases,
-                expense_date: expense_date,
-                user_id:data.user_id
+                other_purchases: otherPurchases,
+                expense_date: expenseDate,
             };
       
             await axios.put(editExpense(idEdit), requestBody);
@@ -59,9 +60,16 @@ export default function EditExpenseItem() {
             setError(true);
           }
     }
+    const handleBillsAndUtilities = (event) => setBillsAndUtilities(event.target.value)
+    const handleGroceryAndFood = (event) => setGroceryAndFood(event.target.value )
+    const handleInsurances = (event) => setInsurances(event.target.value )
+    const handleTax = (event) => setTax(event.target.value )
+    const handleInvestments = (event) => setInvestments(event.target.value )
+    const handleOtherPurchases = (event) => setOtherPurchases(event.target.value )
+    const handleExpenseDate = (event) => setExpenseDate(event.target.value )
     return (
         <>
-        <div className="edit_expense">
+        <div className="edit_expense-header">
             <Link to={'/expenseTracking/manageExpense'}>
                 <img 
                     className="edit_expense-image"
@@ -72,43 +80,56 @@ export default function EditExpenseItem() {
             <div className="edit_expense-title"> Edit Expense</div>
         </div>
         <div>
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label>Expense Date</label>
+        <form className="edit_form" onSubmit={handleSubmit}>
+            <div className="edit_expense">
+                <label className="edit_expense-label">Expense Date</label>
                 <DatePicker
                     showIcon
-                    value={expense_date}
-                    selected={expense_date}
-                    onChange={(date) => setExpenseDate(date)}
+                    value={expenseDate}
+                    className="edit_expense-field--date"
+                    selected={expenseDate}
+                    onChange={handleExpenseDate}
                  />
             </div>
-            <div>
-                <label>Bills And Utilities</label>
-                <input type="text" name="bills_and_utilities" value={bills_and_utilities} onChange={setBillsAndUtilities(bills_and_utilities)} />
+            <div className="edit_expense">
+                <label className="edit_expense-label">Bills And Utilities</label>
+                <div className="edit_expense-input">
+                    <input type="text" name="bills_and_utilities" className="edit_expense-field" value={billsAndUtilities} onChange={handleBillsAndUtilities} />
+                </div>
             </div>
-            <div>
-                <label>Grocery And Food</label>
-                <input type="text" name="grocery_and_food" value={grocery_and_food} onChange={setGroceryAndFood(grocery_and_food)} />
+            <div className="edit_expense">
+                <label className="edit_expense-label">Grocery And Food</label>
+                <div className="edit_expense-input">
+                <input type="text" name="grocery_and_food" className="edit_expense-field" value={groceryAndFood} onChange={handleGroceryAndFood} />
+                </div>
             </div>
-            <div>
-                <label>Insurances</label>
-                <input type="text" name="insurances" value={insurances} onChange={setInsurances(insurances)} />
+            <div className="edit_expense">
+                <label className="edit_expense-label">Insurances</label>
+                <div className="edit_expense-input">
+                <input type="text" name="insurances" className="edit_expense-field" value={insurances} onChange={handleInsurances} />
+                </div>
             </div>
-            <div>
-                <label>Tax</label>
-                <input type="text" name="tax" value={tax} onChange={setTax(tax)} />
+            <div className="edit_expense">
+                <label className="edit_expense-label">Tax</label>
+                <div className="edit_expense-input">
+                <input type="text" name="tax" className="edit_expense-field" value={tax} onChange={handleTax} />
+                </div>
             </div>
-            <div>
-                <label>Investments</label>
-                <input type="text" name="investments" value={investments} onChange={setInvestments(investments)} />
+            <div className="edit_expense">
+                <label className="edit_expense-label">Investments</label>
+                <div className="edit_expense-input">
+                <input type="text" name="investments" className="edit_expense-field" value={investments} onChange={handleInvestments} />
+                </div>
             </div>
-            <div>
-                <label>Other Purchases</label>
-                <input type="text" name="other_purchases" value={other_purchases} onChange={setOtherPurchases(other_purchases)} />
+            <div className="edit_expense">
+                <label className="edit_expense-label">Other Purchases</label>
+                <div className="edit_expense-input">
+                <input type="text" name="other_purchases" className="edit_expense-field" value={otherPurchases} onChange={handleOtherPurchases} />
+                </div>
             </div>
-            <div>
-                <button type="button" onClick={()=>{navigate(-1)}}>CANCEL</button>
-                <button type="submit">SUBMIT</button>
+            <div className="edit_expense-last">
+                <button className="edit_expense-button" type="button" onClick={()=>{navigate(-1)}}>CANCEL</button>
+                <button className="edit_expense-button" type="submit">SUBMIT</button>
             </div>
         </form>
         </div>
