@@ -95,16 +95,20 @@ export default function ExpenseTrackingDashboardPage() {
                 </div>
             </div>
             <div className="expenseCharts">
+                <div className="expenseCharts-item">
                 <Chart chartType="PieChart"
                     data={expenseData}
                     options={expenseOptions}
                     height={'400px'}
                 />
+                </div>
+                <div className="expenseCharts-item">
                 <Chart chartType="PieChart"
                     data={incomeData}
                     options={incomeOptions}
                     height={'400px'}
                 />
+                </div>
             </div>
         </>
     )

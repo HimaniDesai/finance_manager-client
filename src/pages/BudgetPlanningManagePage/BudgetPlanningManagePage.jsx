@@ -274,7 +274,7 @@ export default function BudgetPlanningManagePage() {
                 </div>
                 <div className="expense__header">
                     <label className="expense__cell">Investments</label>
-                    <label className="expense__cell">{expenseData.get("Investments")}</label>
+                    <label className="expense__cell">{expenseData.get("Investment")}</label>
                     <div className="expense__cell">
                     <input
                         type="text"
